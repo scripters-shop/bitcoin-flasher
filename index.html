@@ -1,237 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Bitcoin Flasher - Advanced DApp">
-    <meta name="description" content="Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp.">
-    <meta name="keywords" content="Bitcoin Flasher, Blockchain DApp, BTC Transactions, USDT Transfers, ERC20, BEP20, Polygon, PWA">
+    <title>Bitcoin Flasher DApp - Seamless Crypto Transactions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp. Advanced blockchain technology for efficient crypto transfers.">
+    <meta name="keywords" content="Bitcoin Flasher, DApp, BTC, USDT, Cryptocurrency, Blockchain, Ethereum, Transactions">
+    <meta name="author" content="Bitcoin Flasher Team">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
 
-    <!-- Canonical and Open Graph links -->
-    <link rel="canonical" href="https://bitcoin-flasher.github.io/">
-    <meta property="og:title" content="Bitcoin Flasher - Advanced DApp">
-    <meta property="og:description" content="Simplify your BTC and USDT transfers with our advanced decentralized app.">
-    <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp">
-    <meta property="og:url" content="https://bitcoin-flasher.github.io/">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
+    <meta property="og:title" content="Bitcoin Flasher DApp - Seamless Crypto Transactions">
+    <meta property="og:description" content="Secure and efficient BTC/USDT transactions using advanced blockchain technology. Experience the future of crypto transfers.">
+    <meta property="og:image" content="https://bitcoin-flasher.github.io/bitcoin-flasher/images/og-image.jpg">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bitcoin Flasher - Advanced DApp">
-    <meta name="twitter:description" content="Seamless blockchain transactions with Bitcoin Flasher DApp.">
-    <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp">
-
-    <!-- Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
+    <meta property="twitter:title" content="Bitcoin Flasher DApp - Seamless Crypto Transactions">
+    <meta property="twitter:description" content="Secure and efficient BTC/USDT transactions using advanced blockchain technology. Experience the future of crypto transfers.">
+    <meta property="twitter:image" content="https://bitcoin-flasher.github.io/bitcoin-flasher/images/twitter-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp" type="image/png">
+    <link rel="icon" type="image/png" href="https://bitcoin-flasher.github.io/bitcoin-flasher/favicon.png">
 
-    <!-- External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="https://bitcoin-flasher.github.io/bitcoin-flasher/apple-touch-icon.png">
 
-    <title>Bitcoin Flasher DApp - Seamless BTC/USDT Transactions</title>
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
 
-    <!-- Custom styling -->
+    <!-- Theme color -->
+    <meta name="theme-color" content="#ff9900">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <style>
+        :root {
+            --primary-color: #ff9900;
+            --secondary-color:#2c3e50;
+            --background-color:#1a1a1a;
+            --text-color:#ffffff;
+            --input-bg:#2c3e50;
+            --input-border:#34495e;
+            --success-color:#2ecc71;
+            --error-color:#e74c3c;
+        }
+
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family:'Roboto', sans-serif;
+            background-color:var(--background-color);
+            color:var(--text-color);
+            line-height:1.6;
+            display:flex;
+            flex-direction:column;
+            min-height:100vh;
         }
 
         .container {
-            max-width: 500px;
-            width: 100%;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(145deg, #181818, #222222);
+            max-width:800px;
+            margin:2rem auto;
+            padding:2rem;
+            background:linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius:15px;
+            box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size:2.5rem;
+            text-align:center;
+            margin-bottom:2rem;
+            color:var(--primary-color);
+            text-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
+        .form-group {
+            margin-bottom:1.5rem;
         }
 
-        .btn-primary {
-            background-color: #ff9900;
-            border: none;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background-color 0.3s;
+        label {
+            display:block;
+            margin-bottom:0.5rem;
+            font-weight:bold;
         }
 
-        .btn-primary:hover {
-            background-color: #e67e00;
+        input[type="text"],
+        input[type="number"] {
+            width:100%;
+            padding:0.75rem;
+            border:1px solid var(--input-border);
+            border-radius:5px;
+            background-color:var(--input-bg);
+            color:var(--text-color);
+            font-size:1rem;
+            transition:border-color 0.3s ease;
         }
 
-        input, button {
-            margin-top: 15px;
-            border-radius: 8px;
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline:none;
+            border-color:var(--primary-color);
+            box-shadow:0 0 0 2px rgba(255, 153, 0, 0.2);
+        }
+
+        button {
+            display:block;
+            width:100%;
+            padding:1rem;
+            background-color:var(--primary-color);
+            color:#ffffff;
+            border:none;
+            border-radius:5px;
+            font-size:1rem;
+            font-weight:bold;
+            cursor:pointer;
+            transition:background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color:#e67e00;
+        }
+
+        button:active {
+            transform:translateY(1px);
+        }
+
+        #walletStatus {
+            text-align:center;
+            margin-top:1rem;
+            font-weight:bold;
+        }
+
+        .progress-container {
+            margin-top:2rem;
+        }
+
+        .progress-bar {
+            height:10px;
+            background-color:#34495e;
+            border-radius:5px;
+            overflow:hidden;
+        }
+
+        .progress {
+            width:0;
+            height:100%;
+            background-color:var(--primary-color);
+            transition:width 0.3s ease;
+        }
+
+        #progressText {
+            text-align:center;
+            margin-top:0.5rem;
+            font-size:0.9rem;
+        }
+
+        .loading {
+            display:inline-block;
+            width:20px;
+            height:20px;
+            border:3px solid rgba(255,255,255,.3);
+            border-radius:50%;
+            border-top-color:#fff;
+            animation:spin 1s ease-in-out infinite;
+            margin-left:10px;
+        }
+
+        @keyframes spin {
+            to { transform:rotate(360deg); }
+        }
+
+        .hidden {
+            display:none;
         }
 
         footer {
-            text-align: center;
-            padding: 20px 0;
-            color: #ff9900;
-            font-size: 14px;
-        }
-
-        #progressBar {
-            transition: width 0.5s;
-            height: 10px;
-            border-radius: 5px;
-            background-color: #ff9900;
-        }
-
-        .form-control {
-            background-color: #222222;
-            color: #ffffff;
-            border: 1px solid #444444;
-        }
-
-        .form-control:focus {
-            border-color: #ff9900;
-            box-shadow: 0 0 0 0.25rem rgba(255, 153, 0, 0.25);
+            text-align:center;
+            padding:2rem;
+            margin-top:auto;
+            background-color:var(--secondary-color);
         }
 
         footer a {
-            color: #ff9900;
-            text-decoration: none;
+            color:var(--primary-color);
+            text-decoration:none;
+            transition:color 0.3s ease;
+        }
+
+        footer a:hover {
+            color:#e67e00;
+        }
+
+        .notification {
+            position:fixed;
+            top:20px;
+            right:20px;
+            padding:15px 20px;
+            border-radius:5px;
+            color:#fff;
+            font-weight:bold;
+            opacity:0;
+            transition:opacity 0.3s ease;
+        }
+
+        .notification.success {
+            background-color:var(--success-color);
+        }
+
+        .notification.error {
+            background-color:var(--error-color);
+        }
+
+        .show-notification {
+            opacity:1;
         }
     </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container">
         <h1>Bitcoin Flasher DApp</h1>
-        <p>Secure and Seamless BTC/USDT Transactions</p>
+        <button id="connectWallet">Connect Wallet <span class="loading hidden"></span></button>
+        <p id="walletStatus">Not connected</p>
 
-        <!-- Wallet Connection -->
-        <button id="connectWallet" class="btn btn-primary w-100">Connect Wallet</button>
-        <p id="walletStatus" class="text-success mt-3">Not Connected</p>
-
-        <!-- Transaction Form -->
         <form id="transactionForm">
-            <div class="mb-3">
-                <label for="recipient" class="form-label">Recipient Address</label>
-                <input type="text" id="recipient" class="form-control" placeholder="Enter recipient address" required>
+            <div class="form-group">
+                <label for="recipient">Recipient Address</label>
+                <input type="text" id="recipient" required placeholder="0x...">
             </div>
-            <div class="mb-3">
-                <label for="amount" class="form-label">Amount (USDT)</label>
-                <input type="number" id="amount" class="form-control" placeholder="Enter amount" required>
+            <div class="form-group">
+                <label for="amount">Amount (USDT)</label>
+                <input type="number" id="amount" required min="0" step="0.01" placeholder="0.00">
             </div>
-            <button type="submit" class="btn btn-primary w-100">Send Transaction</button>
+            <button type="submit" id="sendTransaction">Send Transaction <span class="loading hidden"></span></button>
         </form>
 
-        <!-- Progress -->
-        <div class="progress mt-3">
-            <div id="progressBar" class="progress-bar bg-warning" style="width: 0%;">0%</div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" id="progressBar"></div>
+            </div>
+            <p id="progressText"></p>
         </div>
     </div>
 
+    <div id="notification" class="notification"></div>
+
     <footer>
-        &copy; 2024 Bitcoin Flasher - All rights reserved. | <a href="https://t.me/ScriptersShop/" target="_blank">Join ScriptersShop</a>
+        &copy; 2024 Bitcoin Flasher - All rights reserved. | <a href="https://t.me/ScriptersShop/" target="_blank" rel="noopener noreferrer">Join ScriptersShop</a>
     </footer>
 
-    <!-- Web3.js and Script -->
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script>
-        let web3, userAccount;
-        const feeAddress = "0x3a06322e9F1124F6B2de8F343D4FDce4D1009869";
-        const usdtAddress = "YOUR_USDT_CONTRACT_ADDRESS"; // Replace with your USDT contract address
-        const usdtAbi = [...] // Replace with the ABI of the USDT token contract
+        // USDT Contract Address (Ethereum mainnet)
+        const USDT_CONTRACT_ADDRESS = '0xdAC17F958D2ee523a2206206994597C13D831ec7';
+
+        // USDT ABI (Minimal ABI for transfer function)
+        const USDT_ABI = [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "transfer",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "type": "function"
+            }
+        ];
+
+        let web3;
+        let userAccount;
+        let usdtContract;
+
+        const connectWalletBtn = document.getElementById('connectWallet');
+        const walletStatusEl = document.getElementById('walletStatus');
+        const transactionForm = document.getElementById('transactionForm');
+        const sendTransactionBtn = document.getElementById('sendTransaction');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const notificationEl = document.getElementById('notification');
 
         async function connectWallet() {
-            if (window.ethereum) {
+            if (typeof window.ethereum !== 'undefined' ) {
                 try {
-                    web3 = new Web3(window.ethereum);
-                    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                    connectWalletBtn.querySelector('.loading').classList.remove('hidden');
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                     userAccount = accounts[0];
-                    document.getElementById('walletStatus').textContent = `Connected: ${userAccount}`;
+                    web3 = new Web3(window.ethereum);
+                    usdtContract = new web3.eth.Contract(USDT_ABI, USDT_CONTRACT_ADDRESS);
+
+                    walletStatusEl.textContent = `Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
+                    connectWalletBtn.textContent = 'Wallet Connected';
+                    connectWalletBtn.disabled = true;
+
+                    showNotification('Wallet connected successfully!', 'success');
                 } catch (error) {
-                    alert('Wallet connection failed!');
+                    console.error('Failed to connect wallet:', error);
+                    showNotification('Failed to connect wallet. Please try again.', 'error');
+                } finally {
+                    connectWalletBtn.querySelector('.loading').classList.add('hidden');
                 }
             } else {
-                alert('MetaMask is not installed. Please install MetaMask to connect.');
+                showNotification('Please install MetaMask!', 'error');
             }
         }
 
         async function sendTransaction(event) {
             event.preventDefault();
+
+            if (!userAccount) {
+                showNotification('Please connect your wallet first!', 'error');
+                return;
+            }
+
             const recipient = document.getElementById('recipient').value;
             const amount = document.getElementById('amount').value;
 
-            try {
-                const fee = web3.utils.toWei('0.01', 'ether');
-                await web3.eth.sendTransaction({ from: userAccount, to: feeAddress, value: fee });
-                document.getElementById('progressBar').style.width = '50%';
-                document.getElementById('progressBar').textContent = 'Processing...';
+            if (!web3.utils.isAddress(recipient)) {
+                showNotification('Invalid recipient address!', 'error');
+                return;
+            }
 
-                // Real transaction logic
-                const usdtContract = new web3.eth.Contract(usdtAbi, usdtAddress);
-                const decimals = await usdtContract.methods.decimals().call();
-                const amountWei = web3.utils.toWei(amount, 'ether');
+            try {
+                sendTransactionBtn.disabled = true;
+                sendTransactionBtn.querySelector('.loading').classList.remove('hidden');
+
+                updateProgress(10, 'Preparing transaction...');
+
+                const amountWei = web3.utils.toWei(amount, 'mwei'); // USDT has 6 decimal places
                 const gasPrice = await web3.eth.getGasPrice();
-                const gasLimit = 21000;
+                const gasLimit = await usdtContract.methods.transfer(recipient, amountWei).estimateGas({ from: userAccount });
+
+                updateProgress(30, 'Sending transaction...');
 
                 const tx = await usdtContract.methods.transfer(recipient, amountWei).send({
                     from: userAccount,
-                    gas: gasLimit,
-                    gasPrice: gasPrice
+                    gasPrice: gasPrice,
+                    gas: gasLimit
                 });
 
-                document.getElementById('progressBar').style.width = '100%';
-                document.getElementById('progressBar').textContent = 'Transaction Complete!';
-                alert('Transaction sent successfully.');
+                updateProgress(100, 'Transaction complete!');
+                showNotification('Transaction sent successfully!', 'success');
+
+                console.log('Transaction hash:', tx.transactionHash);
             } catch (error) {
-                alert('Transaction failed: ' + error.message);
+                console.error('Transaction failed:', error);
+                updateProgress(0, 'Transaction failed');
+                showNotification('Transaction failed. Please try again.', 'error');
+            } finally {
+                sendTransactionBtn.disabled = false;
+                sendTransactionBtn.querySelector('.loading').classList.add('hidden');
             }
         }
 
-        document.getElementById('connectWallet').addEventListener('click', connectWallet);
-        document.getElementById('transactionForm').addEventListener('submit', sendTransaction);
+        function updateProgress(percent, message) {
+            progressBar.style.width = `${percent }%`;
+            progressText.textContent = message;
+        }
 
-        // PWA Installation Prompt
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            if (!('showInstallPrompt' in navigator)) return;
-            deferredPrompt.prompt();
-        });
+        function showNotification(message, type) {
+            notificationEl.textContent = message;
+            notificationEl.className = `notification ${type}`;
+            notificationEl.classList.add('show-notification');
 
-        // Show install prompt on button click (you can add a button for installation prompt in the future)
-        // document.getElementById('installButton').addEventListener('click', () => {
-        //     if (deferredPrompt) {
-        //         deferredPrompt.prompt();
-        //         deferredPrompt.userChoice.then((choiceResult) => {
-        //             if (choiceResult.outcome === 'accepted') {
-        //                 console.log('User accepted the install prompt');
-        //             } else {
-        //                 console.log('User dismissed the install prompt');
-        //             }
-        //             deferredPrompt = null;
-        //         });
-        //     }
-        // });
+            setTimeout(() => {
+                notificationEl.classList.remove('show-notification');
+            }, 3000);
+        }
+
+        connectWalletBtn.addEventListener('click', connectWallet);
+        transactionForm.addEventListener('submit', sendTransaction);
+
+        // Check if the browser supports service workers
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        // Listen for network changes
+        if (window.ethereum) {
+            window.ethereum.on('networkChanged', function (networkId) {
+                console.log('Network changed to:', networkId);
+                // You can add logic here to handle different network changes
+                if (networkId !== '1') { // '1' is the network ID for Ethereum mainnet
+                    showNotification('Please switch to Ethereum mainnet', 'error');
+                }
+            });
+        }
+
+        // Handle account changes
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', function (accounts) {
+                if (accounts.length === 0) {
+                    // User disconnected their wallet
+                    userAccount = null;
+                    walletStatusEl.textContent = 'Not connected';
+                    connectWalletBtn.textContent = 'Connect Wallet';
+                    connectWalletBtn.disabled = false;
+                    showNotification('Wallet disconnected', 'error');
+                } else {
+                    // User switched accounts
+                    userAccount = accounts[0];
+                    walletStatusEl.textContent = `Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
+                    showNotification('Account changed', 'success');
+                }
+            });
+        }
     </script>
 </body>
 </html>
