@@ -1,16 +1,21 @@
 {
-  "name": "Bitcoin Flasher",
-  "short_name": "BTC Flasher",
-  "description": "Secure BTC/USDT Transactions with advanced DApp features.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ff9900",
-  "icons": [
-    {
-      "src": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+    "name": "Bitcoin Flasher DApp",
+    "short_name": "Bitcoin Flasher",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a1a",
+    "theme_color": "#ff9900",
+    "description": "Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp. Advanced blockchain technology for efficient crypto transfers.",
+    "icons": [
+        {
+            "src": "https://bitcoin-flasher.github.io/bitcoin-flasher/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://bitcoin-flasher.github.io/bitcoin-flasher/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }
