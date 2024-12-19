@@ -1,0 +1,16 @@
+{
+  "name": "Bitcoin Flasher",
+  "short_name": "BTC Flasher",
+  "description": "Secure BTC/USDT Transactions with advanced DApp features.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff9900",
+  "icons": [
+    {
+      "src": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f7/01/e4/f701e4a3-88f1-93c1-fe76-435cfbbf8c51/AppIcon-1x_U007emarketing-0-7-0-85-220.png/492x0w.webp",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
